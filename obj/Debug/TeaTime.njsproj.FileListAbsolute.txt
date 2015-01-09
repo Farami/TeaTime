@@ -1,0 +1,2 @@
+C:\Users\oconnor\Source\Repos\TeaTime\TeaTime\obj\Debug\TeaTime.njsprojResolveAssemblyReference.cache
+C:\Users\oconnor\Source\Repos\TeaTime\TeaTime\bin\Microsoft.NodejsTools.WebRole.dll
