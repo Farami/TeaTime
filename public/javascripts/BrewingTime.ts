@@ -12,13 +12,4 @@
         var timer = new Timer(brewingTime, brewingTimers, name !== "" ? name : null);
         timer.start();
     });
-
-    $("#ClearTimerName").click(() => {
-        $("#TimerName").val("");
-    });
-
-    $("#Tabs a").click(function (e) {
-        e.preventDefault();
-        $(this).tab("show");
-    });
 })();

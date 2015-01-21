@@ -65,6 +65,7 @@
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <None Include="TeaTime.pubxml" />
+    <Content Include="views\timers.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
   </ItemGroup>
