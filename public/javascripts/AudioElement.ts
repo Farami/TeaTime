@@ -4,12 +4,13 @@ class AudioElement {
     private audioElement: HTMLAudioElement;
     private jqueryAudioElement: JQuery;
 
+    /**
+     * Creates an audio DOM Element with the given source.
+     * 
+     * @param src The source for the AudioElement.
+     */
     constructor(src: string) {
-        /**
-         * Creates an audio DOM Element with the given source.
-         * 
-         * @param src The source for the AudioElement.
-         */
+
         this.audioElement = document.createElement("audio");
         this.audioElement.setAttribute("src", src);
         this.audioElement.setAttribute("autoplay", "autoplay");

@@ -1,11 +1,11 @@
 "use strict";
 var AudioElement = (function () {
+    /**
+     * Creates an audio DOM Element with the given source.
+     *
+     * @param src The source for the AudioElement.
+     */
     function AudioElement(src) {
-        /**
-         * Creates an audio DOM Element with the given source.
-         *
-         * @param src The source for the AudioElement.
-         */
         this.audioElement = document.createElement("audio");
         this.audioElement.setAttribute("src", src);
         this.audioElement.setAttribute("autoplay", "autoplay");
