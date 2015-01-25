@@ -8,20 +8,24 @@ class Timer {
     private cancelButton: JQuery;
     private text: JQuery;
 
+    private alarmSound: string;
     private interval: any;
     private time: number;
     timeLeft: number;
 
-    constructor(timeLeft: number, parentDiv: JQuery, text?: string) {
+    constructor(timeLeft: number, parentDiv: JQuery, alarmSound: string) {
         this.parentDiv = parentDiv;
         this.timeLeft = timeLeft;
         this.time = timeLeft;
+        this.alarmSound = alarmSound;
 
         this.timer = $(document.createElement("li"));
         this.timer.addClass("list-group-item");
         this.timer.addClass("row");
 
+        // add progress bar to a parent div to limit width
         var progressBarParentDiv = $(document.createElement("div"));
+        progressBarParentDiv.addClass("col-md-11");
 
         this.progressBar = $(document.createElement("div"));
         this.progressBar.addClass("progress-bar progress-bar-success");
@@ -29,8 +33,10 @@ class Timer {
         this.progressBar.attr("aria-valuenow", this.timeLeft);
         this.progressBar.attr("aria-valuemin", "0");
         this.progressBar.attr("aria-valuemax", this.time);
-        this.progressBar.css("min-height", "20px");
-        this.progressBar.css("width", "100%");
+
+        // add button to a parent div to center right.
+        var buttonParentDiv = $(document.createElement("div"));
+        buttonParentDiv.addClass("col-md-1 text-right");
 
         this.cancelButton = $(document.createElement("button"));
         this.cancelButton.addClass("btn btn-xs btn-danger");
@@ -39,31 +45,11 @@ class Timer {
         this.cancelButton.html("Stop");
         this.cancelButton.click(() => { this.cancel(); });
 
-        if (text != null) {
-            this.text = $(document.createElement("span"));
-
-            if (text.length < 13) {
-                this.text.addClass("col-md-1");
-                progressBarParentDiv.addClass("col-md-10");
-            } else {
-                this.text.addClass("col-md-2");
-                progressBarParentDiv.addClass("col-md-9");
-
-                if (text.length > 24) {
-                    text = text.substring(0, 22) + "...";
-                }
-            }
-            this.text.html(text);
-            this.timer.append(this.text);
-        } else {
-            progressBarParentDiv.addClass("col-md-11");
-        }
-
-        // add progress bar to a parent div to limit width
+        buttonParentDiv.append(this.cancelButton);
         progressBarParentDiv.append(this.progressBar);
 
         this.timer.append(progressBarParentDiv);
-        this.timer.append(this.cancelButton);
+        this.timer.append(buttonParentDiv);
         this.parentDiv.append(this.timer);
     }
 
@@ -96,7 +82,7 @@ class Timer {
         this.timer.addClass("list-group-item-danger");
         this.cancelButton.remove();
 
-        var audio = new AudioElement("sounds/AlarmSound.mp3");
+        var audio = new AudioElement(this.alarmSound);
         // play for three seconds
         audio.play();
         setTimeout(() => {

@@ -8,7 +8,7 @@ html
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
   body
-    .navbar.navbar-inverse.navbar-fixed-top
+    .navbar.navbar-default.navbar-fixed-top
       .container
         .navbar-header
           a.navbar-brand(href='/') TeaTime
@@ -19,13 +19,14 @@ html
       footer
         .text-center
             p 
-                a(href='https://github.com/Farami/TeaTime') TeaTime GitHub
+                strong
+                    a(href='https://github.com/Farami/TeaTime') TeaTime GitHub
             p 
-                a(href='https://github.com/Farami') Farami
+                strong
+                    a(href='https://github.com/Farami') Farami
 
     block scripts
         script(src='/javascripts/utils/jquery-1.11.1.min.js')
-        script(src='/javascripts/utils/respond.min.js')
         script(src='/javascripts/utils/modernizr.min.js')
         script(src='/javascripts/utils/bootstrap.min.js')
 

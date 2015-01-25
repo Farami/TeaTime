@@ -8,8 +8,7 @@
         var brewingTimers = $("#BrewingTimers");
 
         var brewingTime = parseInt($(e.currentTarget).data("time"), 10);
-        var name = $("#TimerName").val();
-        var timer = new Timer(brewingTime, brewingTimers, name !== "" ? name : null);
+        var timer = new Timer(brewingTime, brewingTimers, "sounds/AlarmSound.mp3");
         timer.start();
     });
 })();
