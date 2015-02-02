@@ -37,22 +37,14 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="public\javascripts\utils\jquery-1.11.1.min.js" />
-    <Compile Include="public\javascripts\utils\respond.min.js" />
     <Compile Include="routes\index.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\ChangeConfig.ps1" />
-    <Content Include="bin\download.ps1" />
     <Content Include="bin\Microsoft.NodejsTools.WebRole.dll" />
-    <Content Include="bin\node.cmd" />
-    <Content Include="bin\setup_web.cmd" />
-    <Content Include="bin\www" />
     <Content Include="Procfile" />
-    <Content Include="public\javascripts\utils\bootstrap.js" />
     <Content Include="public\javascripts\utils\bootstrap.min.js" />
     <Content Include="public\javascripts\utils\jquery-1.10.2.intellisense.js" />
     <Content Include="public\javascripts\utils\jquery-1.11.1.min.map" />
-    <Content Include="public\javascripts\utils\modernizr.min.js" />
     <Content Include="public\javascripts\utils\_references.js" />
     <Content Include="package.json" />
     <Content Include="public\fonts\glyphicons-halflings-regular.eot" />
@@ -60,12 +52,10 @@
     <Content Include="public\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="public\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="public\sounds\AlarmSound.mp3" />
-    <Content Include="public\stylesheets\bootstrap.css" />
     <Content Include="public\stylesheets\bootstrap.min.css" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <None Include="TeaTime.pubxml" />
-    <Content Include="views\timers.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
   </ItemGroup>
