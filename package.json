@@ -8,8 +8,14 @@
     "email": "webmaster@farami.de"
   },
   "dependencies": {
-    "express": "3.4.4",
-    "jade": "*",
+    "express": "^3.4.4",
+    "jade": "^1.9.1",
     "stylus": "*"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.11.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "matchdep": "^0.3.0"
   }
 }
