@@ -73,3 +73,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+obj/Debug/TeaTime.njsprojResolveAssemblyReference.cache
+.ntvs_analysis.dat
+.ntvs_analysis.dat.tmp
