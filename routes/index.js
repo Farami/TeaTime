@@ -1,8 +1,9 @@
 ﻿/*jslint node: true */
-/*
- * GET home page.
- */
+var express = require('express');
+var router = express.Router();
 
-exports.index = function (req, res) {
-    res.render("index", { title: "Express", year: new Date().getFullYear() });
-};
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+module.exports = router;

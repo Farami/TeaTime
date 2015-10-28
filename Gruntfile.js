@@ -5,32 +5,58 @@
         pkg: grunt.file.readJSON("package.json"),
         cssmin: {
             sitecss: {
-                options: {
-                    banner: "/* Minified and bundled css for TeaTime. */"
-                },
                 files: {
-                    'public/stylesheets/site.min.css': [
-                        "public/stylesheets/bootstrap.min.css",
-                        "public/stylesheets/style.css"]
+                    'build/styles/site.min.css': [
+                        "src/styles/site.css",
+                        "src/styles/bootstrap.min.css"
+                    ]
+                }
+            }
+        },
+        typescript: {
+            main: {
+                src: ['src/scripts/**/*.ts'],
+                dest: 'build/tmp/site.js',
+                options: {
+                    module: 'amd'
                 }
             }
         },
         uglify: {
-            options: {
-                compress: true
+            my_target: {
+                files: {
+                    'build/scripts/site.min.js': ['build/tmp/site.js', 'vendor/**/*.js']
+                }
+            }
+        },
+        clean: {
+            initial: ["build"],
+            final: ["build/tmp"]
+        },
+        watch: {
+            scripts: {
+                files: ['src/scripts/**/*.ts'],
+                tasks: ['default'],
+                options: {
+                    spawn: false
+                },
             },
-            applib: {
-                src: [
-                    "public/javascripts/utils/jquery-1.11.1.min.js",
-                    "public/javascripts/AudioElement.js",
-                    "public/javascripts/BrewingTime.js",
-                    "public/javascripts/Helper.js",
-                    "public/javascripts/Timer.js"
-                ],
-                dest: "public/javascripts/site.min.js"
+            styles: {
+                files: ['src/styles/site.css'],
+                tasks: ['cssmin'],
+                options: {
+                    spawn: false
+                }
+            }
+        },
+        copy: {
+            main: {
+                files: [
+                    { expand: true, cwd: 'src/sounds/', src: ['**'], dest: 'build/sounds/' },
+                ]
             }
         }
     });
 
-    grunt.registerTask("default", ["uglify", "cssmin"]);
+    grunt.registerTask("default", ["clean:initial", "cssmin", "typescript", "uglify", "copy", "clean:final"]);
 };

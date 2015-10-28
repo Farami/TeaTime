@@ -1,6 +1,0 @@
-C:\Users\oconnor\Source\Repos\TeaTime\TeaTime\obj\Debug\TeaTime.njsprojResolveAssemblyReference.cache
-C:\Users\oconnor\Source\Repos\TeaTime\TeaTime\bin\Microsoft.NodejsTools.WebRole.dll
-C:\Users\Farami\Documents\GitHub\TeaTime\obj\Debug\TeaTime.njsprojResolveAssemblyReference.cache
-C:\Users\Farami\Documents\GitHub\TeaTime\bin\Microsoft.NodejsTools.WebRole.dll
-C:\Users\webma_000\Source\Repos\TeaTime\obj\Debug\TeaTime.njsprojResolveAssemblyReference.cache
-C:\Users\webma_000\Source\Repos\TeaTime\bin\Microsoft.NodejsTools.WebRole.dll
